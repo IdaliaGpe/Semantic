@@ -6,6 +6,7 @@ export default class HomeView extends Component{
 
     productList = ()=> this.props.history.push('/products'); 
     addProduct = ()=> this.props.history.push('/addproduct'); 
+    productGroupList = ()=> this.props.history.push('/groups'); 
 
     
     render() {
@@ -40,7 +41,7 @@ export default class HomeView extends Component{
                                     Ver Grupos
                                 </Header>
                         
-                                <Button primary onClick={this.productList}>Buscar</Button>
+                                <Button primary onClick={this.productGroupList}>Buscar</Button>
                             </Grid.Column>
                     
                             <Grid.Column>

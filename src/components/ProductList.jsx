@@ -37,7 +37,6 @@ export default class ProductList extends Component{
     inspectProduct = id => this.props.history.push({pathname: '/product', state: {productId: id}});
 
     showTacos = ()=>{
-
         if(this.state.isLoading){
             return <Loading/>
         }else{

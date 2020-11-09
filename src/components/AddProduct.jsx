@@ -56,14 +56,13 @@ export default class AddProduct extends Component{
         client.mutate({
             mutation: ADD_PRODUCT,
             variables: {
-                id: id,
                 name: fieldName,
                 price: fieldPrice,
                 productGroupId: fieldGroup
             }
         }).then(res => console.log(res))
         .catch(error => console.log(error));
-        this.props.history.push('/produts');
+        this.props.history.push('/products');
         window.location.reload();
         console.log({name: fieldName, price: fieldPrice, productGroupId: fieldGroup});
     }
