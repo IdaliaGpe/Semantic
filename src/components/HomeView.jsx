@@ -7,6 +7,7 @@ export default class HomeView extends Component{
     productList = ()=> this.props.history.push('/products'); 
     addProduct = ()=> this.props.history.push('/addproduct'); 
     productGroupList = ()=> this.props.history.push('/groups'); 
+    addProductGroup = ()=> this.props.history.push('/addproductgroup'); 
 
     
     render() {
@@ -49,7 +50,7 @@ export default class HomeView extends Component{
                                     <Icon name='file' />
                                     Crear nuevo grupo
                                 </Header>
-                                <Button primary onClick={this.addProduct}>Crear</Button>
+                                <Button primary onClick={this.addProductGroup}>Crear</Button>
                             </Grid.Column>
                         </Grid.Row>
                     </Grid>

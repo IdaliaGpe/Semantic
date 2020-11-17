@@ -27,7 +27,8 @@ export default class ProductGroupList extends Component{
         productGroups: [],
         isLoading: true,
         groupsOptions: [],
-        products: []
+        products: [],
+        defaultOption: ''
     }
 
     //handleGroup = (e, {value}) => this.setState({fieldGroup: value});
@@ -50,12 +51,13 @@ export default class ProductGroupList extends Component{
         groupsOptions: response.data.productGroups.map(group =>{
             return {key: group.id, value: group.id, text: group.name}
         })});
-        //console.log(this.state.productGroups);
+        this.setState({defaultOption: this.state.productGroups[0].id})
+        //console.log(this.state.defaultOption);
         //console.log(response.loading);
     }
 
     showGroups = ()=> {
-        const {isLoading, productGroups, products} = this.state;
+        const {isLoading, products} = this.state;
         if(isLoading){
             return <Loading/>
         }else{
@@ -86,7 +88,7 @@ export default class ProductGroupList extends Component{
         }
     }
 
-    
+    //value={this.state.productGroups[0].id}
     render() {
         return (
             <Fragment>
